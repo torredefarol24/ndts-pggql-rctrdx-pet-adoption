@@ -1,0 +1,38 @@
+{
+	"name": "api",
+	"version": "1.0.0",
+	"main": "index.js",
+	"author": "Toufiq (https://twitter.com/burningraven06)",
+	"license": "MIT",
+	"scripts": {
+
+		"watch-ts": "tsc -w",
+		"watch-js": "nodemon build/server.js",
+
+
+		"print_ts_build_start": "echo \"\nTS Build Started\" ",
+		"print_ts_build_end": "echo \"\nTS Build completed successfully\" ",
+		"build_typescript": "tsc",
+		"build_ts": "yarn print_ts_build_start && yarn build_typescript && yarn print_ts_build_end",
+
+
+		"print_env_setup_end": "echo \"\nENV setup complete. Please fillup values in .env\" ",
+		"copy_env": "cp .env.example .env",
+		"setup_env": "yarn copy_env && yarn print_env_setup_end",
+
+
+		"print_copy_tspublic_start": "echo \"\nStarted Copying public folder from TS (source/public)\"",
+		"print_copy_tspublic_end": "echo \"\nFinished copying public folder to JS (build/public) successfully\"",
+		"copy_public_folder": "cp -r source/public build/public",
+		"serve_react_spa": "yarn print_copy_tspublic_start && yarn copy_public_folder && yarn print_copy_tspublic_end"
+
+	},
+	"dependencies": {
+		"@types/dotenv": "^6.1.0",
+		"@types/express": "^4.16.1",
+		"dotenv": "^7.0.0",
+		"express": "^4.16.4",
+		"typescript": "^3.3.3333",
+		"winston": "^3.2.1"
+	}
+}
