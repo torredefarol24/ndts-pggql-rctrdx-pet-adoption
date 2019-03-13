@@ -1,0 +1,40 @@
+{
+	"name": "petadoption_tsgql_rct",
+	"version": "0.1.0",
+	"private": true,
+	"dependencies": {
+		"@types/react": "^16.8.8",
+		"@types/react-dom": "^16.8.2",
+		"react": "^16.8.4",
+		"react-dom": "^16.8.4",
+		"react-scripts": "2.1.8",
+		"typescript": "^3.3.3333"
+	},
+	"scripts": {
+		"start": "PORT=6060 react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject",
+
+		"print_copy_build_ts_start": "echo \"\nCopying React SPA (build) to Node TS (source/public) Folder\" ",
+		"print_copy_build_ts_end": "echo \"\nFinished copying React SPA (build) to Node TS (source/public) Folder\" ",
+		"copy_reactbuild_ts": "cp -r build/ ../api/source/public",
+		"copy_build_ts": "yarn print_copy_build_ts_start && yarn copy_reactbuild_ts && yarn print_copy_build_ts_end",
+
+		"print_copy_build_js_start": "echo \"\nCopying React SPA (build) to Node JS (build/public) Folder\" ",
+		"print_copy_build_js_end": "echo \"\nFinished copying React SPA (build) to Node JS (build/public) Folder\" ",
+		"copy_reactbuild_js": "cp -r build/ ../api/build/public",
+		"copy_build_js": "yarn print_copy_build_js_start && yarn copy_reactbuild_js && yarn print_copy_build_js_end",
+
+		"build_then_copy": "yarn build && yarn copy_build_ts && yarn copy_build_js"
+	},
+	"eslintConfig": {
+		"extends": "react-app"
+	},
+	"browserslist": [
+		">0.2%",
+		"not dead",
+		"not ie <= 11",
+		"not op_mini all"
+	]
+}

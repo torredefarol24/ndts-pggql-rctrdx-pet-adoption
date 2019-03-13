@@ -2,5 +2,3 @@ api/node_modules
 api/.env
 api/logs
 api/build
-client/node_modules
-client/build
